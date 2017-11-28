@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+    <!-- 创建dao -->
+    <bean id="employeeDao" class="com.xin.dao.EmployeeDao">
+
+    </bean>
+    <!-- 创建service 自动注入dao -->
+    <bean id="employeeService" class="com.xin.service.EmployeeService">
+        <property name="employeeDao" ref="employeeDao"></property>
+    </bean>
+    <!-- 创建action -->
+    <bean id="employeeAction" class="com.xin.action.EmployeeAction"> 
+        <property name="employeeService" ref="employeeService"></property>
+    </bean>
+
+</beans> 
