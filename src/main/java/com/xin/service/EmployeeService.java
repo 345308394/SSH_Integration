@@ -1,6 +1,7 @@
 package com.xin.service;
 
 import com.xin.dao.EmployeeDao;
+import com.xin.entity.Employee;
 
 public class EmployeeService 
 {
@@ -10,9 +11,9 @@ public class EmployeeService
 	{
 		this.employeeDao= employeeDao;
 	}
-	public void saveEmployee()
+	public void saveEmployee(Employee employee)
 	{
 		System.out.println("service执行了");
-		employeeDao.saveEmployee();
+		employeeDao.saveEmployee(employee);
 	}
 }
