@@ -8,10 +8,11 @@
 </head>
 <body>
 	<form action="Employee_save" method="post">
-		username:<input type="text" name="empName" /><br> 
-		password:<input   type="password" name="password" /><br>
-		gender  :<input type="text"name="gender" /><br>
+		username:<input type="text" name="employee.empName" /><br> 
+		password:<input   type="password" name="employee.password" /><br>
+		gender  :<input type="text"name="employee.gender" /><br>
 		  <input type="submit" value="提交" />
 	</form>
+	<a href="Employee_AllEmployee">所有员工</a>
 </body>
 </html>

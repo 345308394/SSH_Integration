@@ -1,5 +1,7 @@
 package com.xin.service;
 
+import java.util.List;
+
 import com.xin.dao.EmployeeDao;
 import com.xin.entity.Employee;
 
@@ -15,5 +17,12 @@ public class EmployeeService
 	{
 		System.out.println("service执行了");
 		employeeDao.saveEmployee(employee);
+	}
+	public List<Employee> AllEmployee(){
+		List<Employee> employeeList = employeeDao.AllEmployee();
+		return employeeList;
+	}
+	public void DeleteEmployee(Employee employee){
+		employeeDao.DeleteEmployee(employee);
 	}
 }
