@@ -41,5 +41,10 @@ public class EmployeeDao{
 		getSession().delete(employee);
 		tx.commit();
 	}
+	public void UpdateEmployee(Employee employee){
+		tx = getSession().beginTransaction();
+		getSession().update(employee);
+		tx.commit();
+	}
 		
 }

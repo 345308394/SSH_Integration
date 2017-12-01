@@ -62,8 +62,15 @@ public class EmployeeAction extends ActionSupport implements ModelDriven<Employe
 		System.out.println(employee);
 		return "AllEmp";
 	}
-	
-
+	public String EmployeeDetails(){
+		HttpSession session =request.getSession();
+		session.setAttribute("employee", employee);
+		return "success";
+	}
+	public String UpdateEmployee(){
+		employeeService.UpdateEmployee(employee);
+		return "AllEmp";
+	}
 	
 
 	

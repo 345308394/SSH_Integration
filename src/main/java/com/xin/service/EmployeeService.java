@@ -25,4 +25,7 @@ public class EmployeeService
 	public void DeleteEmployee(Employee employee){
 		employeeDao.DeleteEmployee(employee);
 	}
+	public void UpdateEmployee(Employee employee){
+		employeeDao.UpdateEmployee(employee);
+	}
 }

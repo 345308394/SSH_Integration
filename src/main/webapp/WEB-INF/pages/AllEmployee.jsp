@@ -55,10 +55,10 @@ $(function(){
             <a class="delete" href="Employee_DeleteEmployee?employee.empId=${employee.empId}">删除</a>
             </td> 
             <td>
-            <a  href="Book_BookDetail?book.bookid=${book.bookid}">修改</a>
+            <a  href="Employee_EmployeeDetails?employee.empId=${employee.empId}&employee.empName=${employee.empName}&employee.password=${employee.password}&employee.gender=${employee.gender}">修改</a>
             </td>
     </s:iterator>  
 </table>
-<h1><a href="Book_BookAddUi">添加图书</a></h1>
+<h1><a href="http://localhost:10109/SSH_Integration/index.jsp">添加员工</a></h1>
 </body>
 </html>

@@ -9,9 +9,6 @@
 		<action name="*_*" class="com.xin.action.{1}Action" method="{2}">
 			<result name="success">/WEB-INF/pages/{2}.jsp</result>
 			<result name="AllEmp" type="redirect">Employee_AllEmployee</result>
-			<result name="DeleteBook" type="redirect">Book_AllBooks</result>
-			<result name="BookDetail" >/WEB-INF/pages/BookDetail.jsp</result>
-			<result name="BookUpdate" type="redirect">Book_AllBooks</result>
 		</action>
 	</package>
 </struts>
