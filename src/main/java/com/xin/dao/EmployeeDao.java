@@ -3,12 +3,15 @@ package com.xin.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+//import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+//import org.hibernate.criterion.Restrictions;
 
 import com.xin.entity.Employee;
+
 
 public class EmployeeDao{
 	List<Employee> employeeList = new ArrayList<Employee>();
@@ -45,6 +48,18 @@ public class EmployeeDao{
 		tx = getSession().beginTransaction();
 		getSession().update(employee);
 		tx.commit();
+		
+	}
+	public Employee FindEmpById(int id){
+		tx=getSession().beginTransaction();
+//		Criteria criteria = getSession().createCriteria(Employee.class);
+//		Employee employee=(Employee)criteria.add(Restrictions.eq("id",id));	
+		hql="from Employee as Emp where Emp.empId = :EmpId";
+		Query query=getSession().createQuery(hql);
+		query.setInteger("EmpId",id);
+		Employee employee =  (Employee)query.uniqueResult();
+		getSession().clear();
+		return employee;	
 	}
 		
 }

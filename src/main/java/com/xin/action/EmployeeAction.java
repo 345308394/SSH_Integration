@@ -44,9 +44,23 @@ public class EmployeeAction extends ActionSupport implements ModelDriven<Employe
 	
 	public String save()
 	{	
-		System.out.println("action执行了");
+		if("".equals(employee.getEmpName())){
+			addActionError("用户名不能为空");
+			return "failure";
+		}
+		else if ("".equals(employee.getPassword())){
+			addActionError("密码不能为空");
+			return "failure";
+		}
+		else if ("".equals(employee.getGender())){
+			addActionError("性别不能为空");
+			return "failure";
+		}
+		else{
 		employeeService.saveEmployee(employee);
 		return "AllEmp";
+		}
+		
 	}
 	public String AllEmployee(){
 		HttpSession session=request.getSession();
@@ -64,14 +78,15 @@ public class EmployeeAction extends ActionSupport implements ModelDriven<Employe
 	}
 	public String EmployeeDetails(){
 		HttpSession session =request.getSession();
-		session.setAttribute("employee", employee);
+		Employee employeeDetail=employeeService.FindEmpById(employee.getEmpId());
+		session.setAttribute("employee", employeeDetail);
 		return "success";
 	}
 	public String UpdateEmployee(){
 		employeeService.UpdateEmployee(employee);
+		System.out.println(employee);
 		return "AllEmp";
 	}
-	
 
 	
 	

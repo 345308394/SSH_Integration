@@ -8,8 +8,7 @@
 </head>
 <body>
 <h1>员工信息界面</h1>
-${employee}
-<form action="Employee_UpdateEmployee">
+<form action="Employee_UpdateEmployee" method="post">
 <div>
 <span>员工编号</span>
 <input  type="text" name="employee.empId"  value="${sessionScope.employee.empId}"/>

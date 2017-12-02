@@ -55,7 +55,7 @@ $(function(){
             <a class="delete" href="Employee_DeleteEmployee?employee.empId=${employee.empId}">删除</a>
             </td> 
             <td>
-            <a  href="Employee_EmployeeDetails?employee.empId=${employee.empId}&employee.empName=${employee.empName}&employee.password=${employee.password}&employee.gender=${employee.gender}">修改</a>
+            <a  href="Employee_EmployeeDetails?employee.empId=${employee.empId}">修改</a>
             </td>
     </s:iterator>  
 </table>

@@ -8,6 +8,7 @@
 		<!-- 配置Action --> 
 		<action name="*_*" class="com.xin.action.{1}Action" method="{2}">
 			<result name="success">/WEB-INF/pages/{2}.jsp</result>
+			<result name="failure">/index.jsp</result>
 			<result name="AllEmp" type="redirect">Employee_AllEmployee</result>
 		</action>
 	</package>
